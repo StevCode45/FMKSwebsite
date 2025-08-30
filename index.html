@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Future Model Of Knowledge School (FMKS)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'fmks-blue': '#1e40af',
+                        'fmks-pink': '#ec4899',
+                        'fmks-light-blue': '#3b82f6',
+                        'fmks-light-pink': '#f472b6'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #1e40af 0%, #ec4899 100%); }
+        .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-3">
+                    <!-- School Logo SVG -->
+                    <div class="w-12 h-12 bg-gradient-to-br from-fmks-blue to-fmks-pink rounded-full flex items-center justify-center">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-fmks-blue">FMKS</h1>
+                        <p class="text-xs text-gray-600">Future Model Of Knowledge</p>
+                    </div>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-fmks-blue font-medium">Home</a>
+                    <a href="#about" class="text-gray-700 hover:text-fmks-blue font-medium">About</a>
+                    <a href="#programs" class="text-gray-700 hover:text-fmks-blue font-medium">Programs</a>
+                    <a href="#contact" class="text-gray-700 hover:text-fmks-blue font-medium">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="gradient-bg text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="text-5xl font-bold mb-6">Future Model Of Knowledge School</h1>
+                    <p class="text-xl mb-8 opacity-90">Nurturing young minds with Islamic values and quality education for children of all ages</p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button onclick="document.querySelector('#contact').scrollIntoView({behavior: 'smooth'})" class="bg-white text-fmks-blue px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition duration-300">Enroll Now</button>
+                        <button onclick="document.querySelector('#about').scrollIntoView({behavior: 'smooth'})" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-fmks-blue transition duration-300">Learn More</button>
+                    </div>
+                </div>
+                <div class="flex justify-center">
+                    <!-- School Building SVG -->
+                    <svg class="w-96 h-96 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 3L1 9v2h2v10h6v-6h6v6h6V11h2V9L12 3z"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">About FMKS</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">A unique educational institution that seamlessly blends Islamic teachings with comprehensive Western education, preparing young minds for success in both worlds.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center card-hover bg-gradient-to-br from-fmks-blue to-fmks-light-blue text-white p-8 rounded-2xl">
+                    <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Islamic Values</h3>
+                    <p class="opacity-90">Comprehensive Islamic education including Quran, Hadith, and Islamic studies integrated into daily learning.</p>
+                </div>
+                
+                <div class="text-center card-hover bg-gradient-to-br from-fmks-pink to-fmks-light-pink text-white p-8 rounded-2xl">
+                    <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Quality Education</h3>
+                    <p class="opacity-90">Modern Western curriculum covering Mathematics, English, Science, and Arts with innovative teaching methods.</p>
+                </div>
+                
+                <div class="text-center card-hover bg-gradient-to-br from-purple-600 to-indigo-600 text-white p-8 rounded-2xl">
+                    <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20 3H4c-1.11 0-2 .89-2 2v11c0 1.11.89 2 2 2h3l1 1h8l1-1h3c1.11 0 2-.89 2-2V5c0-1.11-.89-2-2-2zm0 13H4V5h16v11z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">IT Training</h3>
+                    <p class="opacity-90">Modern computer skills and digital literacy training to prepare students for the digital age.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Our Programs</h2>
+                <p class="text-xl text-gray-600">Comprehensive education from Nursery to JSS 3</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl p-6 card-hover shadow-lg">
+                    <div class="text-6xl mb-4">🌱</div>
+                    <h3 class="text-xl font-bold text-fmks-blue mb-3">Nursery & Kindergarten</h3>
+                    <p class="text-gray-600 mb-4">Foundation learning with play-based Islamic and academic activities for ages 3-5.</p>
+                    <ul class="text-sm text-gray-500 space-y-1">
+                        <li>• Basic Arabic letters</li>
+                        <li>• Simple Duas & prayers</li>
+                        <li>• Number & letter recognition</li>
+                        <li>• Creative play & arts</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-6 card-hover shadow-lg">
+                    <div class="text-6xl mb-4">📚</div>
+                    <h3 class="text-xl font-bold text-fmks-pink mb-3">Primary (1-5)</h3>
+                    <p class="text-gray-600 mb-4">Comprehensive primary education with Islamic studies and core subjects.</p>
+                    <ul class="text-sm text-gray-500 space-y-1">
+                        <li>• Quran reading & memorization</li>
+                        <li>• English & Mathematics</li>
+                        <li>• Science & Social Studies</li>
+                        <li>• Basic computer skills</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-6 card-hover shadow-lg">
+                    <div class="text-6xl mb-4">🎓</div>
+                    <h3 class="text-xl font-bold text-fmks-blue mb-3">Junior Secondary (JSS 1-3)</h3>
+                    <p class="text-gray-600 mb-4">Advanced secondary education preparing students for senior secondary school.</p>
+                    <ul class="text-sm text-gray-500 space-y-1">
+                        <li>• Advanced Islamic studies</li>
+                        <li>• Core subjects</li>
+                        <li>• IT & Computer literacy</li>
+                        <li>• Leadership development</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold text-gray-900 mb-6">Why Choose FMKS?</h2>
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-fmks-blue rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900">Qualified Islamic Scholars</h3>
+                                <p class="text-gray-600">Experienced teachers with deep Islamic knowledge and modern teaching credentials.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-fmks-pink rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900">Small Class Sizes</h3>
+                                <p class="text-gray-600">Personalized attention with maximum 15 students per class for optimal learning.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-fmks-blue rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900">Modern Facilities</h3>
+                                <p class="text-gray-600">Conducive classrooms, Computer room, prayer hall, and playground facilities.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex justify-center">
+                    <!-- Classroom SVG -->
+                    <svg class="w-96 h-96 text-fmks-blue" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M4 4h16v2H4zm0 4h16v2H4zm0 4h10v2H4zm0 4h10v2H4z"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 gradient-bg text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Get In Touch</h2>
+                <p class="text-xl opacity-90">Ready to give your child the best of both worlds? Contact us today!</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Address</p>
+                                <p class="opacity-90">Ibukun Oluwa Area, Behind NECO Office, Gbongan/Ibadan Road, Osun State, Nigeria</p>
+                            </div>
+                            </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M2 5.5A2.5 2.5 0 014.5 3h11A2.5 2.5 0 0118 5.5v9a2.5 2.5 0 01-2.5 2.5h-11A2.5 2.5 0 012 14.5v-9zM4 6l6 4 6-4v-.5l-6 4-6-4V6z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Email</p>
+                                <p class="opacity-90">info@fmkschool.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M2.003 5.884l3.25-.5a1 1 0 01.997.417l2.19 3.286a1 1 0 01-.21 1.32l-1.27 1.016a11.037 11.037 0 005.292 5.292l1.016-1.27a1 1 0 011.32-.21l3.286 2.19a1 1 0 01.417.997l-.5 3.25a1 1 0 01-1.003.874C6.477 22 2 17.523 2 12.003a1 1 0 01.003-.119z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Phone</p>
+                                <p class="opacity-90">+234 812 345 6789</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-6">Send Us a Message</h3>
+                    <form class="space-y-6">
+                        <div>
+                            <label class="block mb-2 text-sm font-medium">Name</label>
+                            <input type="text" class="w-full p-3 rounded-lg text-gray-900" placeholder="Your Name" required>
+                        </div>
+                        <div>
+                            <label class="block mb-2 text-sm font-medium">Email</label>
+                            <input type="email" class="w-full p-3 rounded-lg text-gray-900" placeholder="Your Email" required>
+                        </div>
+                        <div>
+                            <label class="block mb-2 text-sm font-medium">Message</label>
+                            <textarea class="w-full p-3 rounded-lg text-gray-900" rows="4" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-white text-fmks-blue py-3 rounded-lg font-semibold hover:bg-gray-100 transition">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-fmks-blue text-white py-8 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="flex justify-center mb-4">
+                <!-- Footer Logo SVG -->
+                <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3z"/>
+                </svg>
+            </div>
+            <p class="mb-2">&copy; 2025 Future Model Of Knowledge School. All rights reserved.</p>
+            <p class="text-sm opacity-80">Ibukun Oluwa Area, Behind NECO Office, Gbongan/Ibadan Road, Osun State, Nigeria</p>
+        </div>
+    </footer>
+</body>
+</html>
