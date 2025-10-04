@@ -3,549 +3,959 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Future Model Of Knowledge School - Islamic Excellence in Education</title>
+    <title>My Library - Connect, Read, Share</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'fmks-blue': '#1e40af',
-                        'fmks-pink': '#ec4899',
-                        'fmks-light-blue': '#dbeafe',
-                        'fmks-light-pink': '#fce7f3'
+                        primary: '#6B00FE',
+                        'primary-dark': '#5500CC',
+                        'primary-light': '#8A33FF'
                     }
                 }
             }
         }
     </script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        body { font-family: 'Inter', sans-serif; }
-        .hero-gradient { background: linear-gradient(135deg, #1e40af 0%, #ec4899 100%); }
-        .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
-        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
+        body {
+            box-sizing: border-box;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #6B00FE 0%, #8A33FF 100%);
+        }
+        .book-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .book-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(107, 0, 254, 0.15);
+        }
+        .nav-link {
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #6B00FE;
+        }
+        .feature-card {
+            transition: all 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
     </style>
 </head>
-<body class="bg-gray-50">
+<body class="bg-gray-50 font-sans">
     <!-- Navigation -->
     <nav class="bg-white shadow-lg sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHkJm7Gaoyj99wW_Vgm4LXXe5B0t6Tfddubw&s" 
-                         alt="Future Model Of Knowledge School Logo" 
-                         class="w-12 h-12 rounded-lg mr-3 object-cover shadow-md"
-                         onerror="this.src=''; this.alt='School logo failed to load'; this.style.display='none';">
-                    <span class="text-2xl font-bold text-gray-800">FMKS</span>
+                    <div class="flex-shrink-0">
+                        <h1 class="text-2xl font-bold text-primary">📚 My Library</h1>
+                    </div>
+                    <div class="hidden md:block ml-10">
+                        <div class="flex items-center space-x-8">
+                            <a href="#home" class="nav-link text-gray-700 hover:text-primary font-medium">Home</a>
+                            <a href="#library" class="nav-link text-gray-700 hover:text-primary font-medium">Free Library</a>
+                            <a href="#marketplace" class="nav-link text-gray-700 hover:text-primary font-medium">Marketplace</a>
+                            <a href="#community" class="nav-link text-gray-700 hover:text-primary font-medium">Community</a>
+                            <a href="#blog" class="nav-link text-gray-700 hover:text-primary font-medium">Blog</a>
+                            <a href="#about" class="nav-link text-gray-700 hover:text-primary font-medium">About</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button onclick="showLogin()" class="text-gray-700 hover:text-primary font-medium px-4 py-2 rounded-lg hover:bg-gray-50 transition-colors">Login</button>
+                    <button onclick="showSignup()" class="bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-lg font-medium transition-colors text-sm">Join</button>
                 </div>
             </div>
         </div>
-
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-gradient text-white py-20">
+    <section id="home" class="gradient-bg text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-5xl md:text-6xl font-bold mb-6">Connect. Read. Share.</h1>
+            <p class="text-xl md:text-2xl mb-8 opacity-90">The modern platform for book lovers, authors, and readers worldwide</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button onclick="scrollToSection('library')" class="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">Read Free Books</button>
+                <button onclick="scrollToSection('marketplace')" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary transition-colors">Sell Your Book</button>
+                <button onclick="scrollToSection('community')" class="bg-primary-light text-white px-8 py-3 rounded-lg font-semibold hover:bg-primary-dark transition-colors">Join Community</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Overview -->
+    <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-                        Future Model Of Knowledge School
-                    </h1>
-                    <p class="text-xl mb-8 text-blue-100">
-                        Nurturing young minds with Islamic values and quality education for children of all ages
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <button onclick="scrollToSection('about')" class="bg-white text-fmks-blue px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-                            Learn More
-                        </button>
-                        <button onclick="scrollToSection('contact')" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-fmks-blue transition-colors">
-                            Enroll Now
-                        </button>
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Everything You Need in One Place</h2>
+                <p class="text-xl text-gray-600">Discover, share, and monetize your love for books</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="feature-card bg-gray-50 p-8 rounded-xl text-center">
+                    <div class="text-4xl mb-4">📖</div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Free Library</h3>
+                    <p class="text-gray-600 mb-6">Access thousands of public domain and Creative Commons books. Download PDFs and EPUBs instantly.</p>
+                    <button onclick="scrollToSection('library')" class="text-primary font-semibold hover:underline">Explore Library →</button>
+                </div>
+                <div class="feature-card bg-gray-50 p-8 rounded-xl text-center">
+                    <div class="text-4xl mb-4">💼</div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Marketplace</h3>
+                    <p class="text-gray-600 mb-6">Authors and publishers can upload, sell, and track their book sales with secure payments.</p>
+                    <button onclick="scrollToSection('marketplace')" class="text-primary font-semibold hover:underline">Start Selling →</button>
+                </div>
+                <div class="feature-card bg-gray-50 p-8 rounded-xl text-center">
+                    <div class="text-4xl mb-4">👥</div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Community</h3>
+                    <p class="text-gray-600 mb-6">Connect with fellow readers, write reviews, share what you're reading, and join discussions.</p>
+                    <button onclick="scrollToSection('community')" class="text-primary font-semibold hover:underline">Join Community →</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Free Library Section -->
+    <section id="library" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Free Book Library</h2>
+                <p class="text-xl text-gray-600">Discover thousands of free books from classic literature to modern works</p>
+            </div>
+            
+            <!-- Search and Filters -->
+            <div class="bg-white p-6 rounded-xl shadow-sm mb-8">
+                <div class="flex flex-col md:flex-row gap-4">
+                    <input type="text" placeholder="Search books, authors, titles..." class="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                    <select class="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary">
+                        <option>All Genres</option>
+                        <option>Fiction</option>
+                        <option>Non-Fiction</option>
+                        <option>Science</option>
+                        <option>History</option>
+                        <option>Philosophy</option>
+                    </select>
+                    <select class="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary">
+                        <option>All Years</option>
+                        <option>2020-2024</option>
+                        <option>2010-2019</option>
+                        <option>2000-2009</option>
+                        <option>Before 2000</option>
+                    </select>
+                    <button onclick="searchBooks()" class="bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-lg font-medium transition-colors">Search</button>
+                </div>
+            </div>
+
+            <!-- Book Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <div class="book-card bg-white rounded-xl shadow-sm overflow-hidden cursor-pointer" onclick="openBookDetails('pride-prejudice')">
+                    <div class="h-48 bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
+                        <span class="text-white text-6xl">📚</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-gray-900 mb-2">Pride and Prejudice</h3>
+                        <p class="text-gray-600 text-sm mb-2">Jane Austen</p>
+                        <p class="text-gray-500 text-xs mb-3">Classic Fiction • 1813</p>
+                        <div class="flex gap-2">
+                            <button onclick="event.stopPropagation(); downloadBook('pride-prejudice')" class="flex-1 bg-primary hover:bg-primary-dark text-white py-2 px-3 rounded text-sm font-medium transition-colors">Download PDF</button>
+                            <button onclick="event.stopPropagation(); readOnline('pride-prejudice')" class="flex-1 border border-primary text-primary hover:bg-primary hover:text-white py-2 px-3 rounded text-sm font-medium transition-colors">Read Online</button>
+                        </div>
                     </div>
                 </div>
-                <div class="relative">
-                    <div class="bg-white bg-opacity-20 rounded-2xl p-4 backdrop-blur-sm">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7fZxZl1BxcJK1MClL8h1vlV5CuiSIexs2GyarRpBclrpRvRIdRquNQX8&s=10" 
-                             alt="Beautiful Islamic school building with modern architecture" 
-                             class="w-full h-64 object-cover rounded-xl shadow-lg"
-                             onerror="this.src=''; this.alt='School image failed to load'; this.style.display='none';">
+                
+                <div class="book-card bg-white rounded-xl shadow-sm overflow-hidden cursor-pointer" onclick="openBookDetails('origin-species')">
+                    <div class="h-48 bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center">
+                        <span class="text-white text-6xl">🔬</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-gray-900 mb-2">The Origin of Species</h3>
+                        <p class="text-gray-600 text-sm mb-2">Charles Darwin</p>
+                        <p class="text-gray-500 text-xs mb-3">Science • 1859</p>
+                        <div class="flex gap-2">
+                            <button onclick="event.stopPropagation(); downloadBook('origin-species')" class="flex-1 bg-primary hover:bg-primary-dark text-white py-2 px-3 rounded text-sm font-medium transition-colors">Download PDF</button>
+                            <button onclick="event.stopPropagation(); readOnline('origin-species')" class="flex-1 border border-primary text-primary hover:bg-primary hover:text-white py-2 px-3 rounded text-sm font-medium transition-colors">Read Online</button>
+                        </div>
                     </div>
                 </div>
+
+                <div class="book-card bg-white rounded-xl shadow-sm overflow-hidden cursor-pointer" onclick="openBookDetails('hamlet')">
+                    <div class="h-48 bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center">
+                        <span class="text-white text-6xl">🎭</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-gray-900 mb-2">Hamlet</h3>
+                        <p class="text-gray-600 text-sm mb-2">William Shakespeare</p>
+                        <p class="text-gray-500 text-xs mb-3">Drama • 1603</p>
+                        <div class="flex gap-2">
+                            <button onclick="event.stopPropagation(); downloadBook('hamlet')" class="flex-1 bg-primary hover:bg-primary-dark text-white py-2 px-3 rounded text-sm font-medium transition-colors">Download PDF</button>
+                            <button onclick="event.stopPropagation(); readOnline('hamlet')" class="flex-1 border border-primary text-primary hover:bg-primary hover:text-white py-2 px-3 rounded text-sm font-medium transition-colors">Read Online</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="book-card bg-white rounded-xl shadow-sm overflow-hidden cursor-pointer" onclick="openBookDetails('republic')">
+                    <div class="h-48 bg-gradient-to-br from-red-400 to-red-600 flex items-center justify-center">
+                        <span class="text-white text-6xl">⚖️</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-gray-900 mb-2">The Republic</h3>
+                        <p class="text-gray-600 text-sm mb-2">Plato</p>
+                        <p class="text-gray-500 text-xs mb-3">Philosophy • 380 BC</p>
+                        <div class="flex gap-2">
+                            <button onclick="event.stopPropagation(); downloadBook('republic')" class="flex-1 bg-primary hover:bg-primary-dark text-white py-2 px-3 rounded text-sm font-medium transition-colors">Download PDF</button>
+                            <button onclick="event.stopPropagation(); readOnline('republic')" class="flex-1 border border-primary text-primary hover:bg-primary hover:text-white py-2 px-3 rounded text-sm font-medium transition-colors">Read Online</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <button onclick="viewAllBooks()" class="bg-primary hover:bg-primary-dark text-white px-8 py-3 rounded-lg font-medium transition-colors">View All Books</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marketplace Section -->
+    <section id="marketplace" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Book Marketplace</h2>
+                <p class="text-xl text-gray-600">Discover and purchase books from independent authors and publishers</p>
+            </div>
+
+            <!-- Featured Books -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                <div class="book-card bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-indigo-400 to-indigo-600 flex items-center justify-center">
+                        <span class="text-white text-6xl">🚀</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-gray-900 mb-2">The Future of AI</h3>
+                        <p class="text-gray-600 text-sm mb-2">Dr. Sarah Chen</p>
+                        <p class="text-gray-500 text-xs mb-2">Technology • 2024</p>
+                        <div class="flex items-center mb-3">
+                            <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
+                            <span class="text-gray-500 text-sm ml-2">(127 reviews)</span>
+                        </div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-2xl font-bold text-primary">₦8,999</span>
+                            <button onclick="previewBook('future-ai')" class="text-primary hover:underline text-sm">Preview</button>
+                        </div>
+                        <button onclick="addToCart('future-ai')" class="w-full bg-primary hover:bg-primary-dark text-white py-2 rounded-lg font-medium transition-colors">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="book-card bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-pink-400 to-pink-600 flex items-center justify-center">
+                        <span class="text-white text-6xl">💝</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-gray-900 mb-2">Love in the Digital Age</h3>
+                        <p class="text-gray-600 text-sm mb-2">Maria Rodriguez</p>
+                        <p class="text-gray-500 text-xs mb-2">Romance • 2024</p>
+                        <div class="flex items-center mb-3">
+                            <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
+                            <span class="text-gray-500 text-sm ml-2">(89 reviews)</span>
+                        </div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-2xl font-bold text-primary">₦7,199</span>
+                            <button onclick="previewBook('love-digital')" class="text-primary hover:underline text-sm">Preview</button>
+                        </div>
+                        <button onclick="addToCart('love-digital')" class="w-full bg-primary hover:bg-primary-dark text-white py-2 rounded-lg font-medium transition-colors">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="book-card bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center">
+                        <span class="text-white text-6xl">🏔️</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-gray-900 mb-2">Mountain Adventures</h3>
+                        <p class="text-gray-600 text-sm mb-2">Jake Thompson</p>
+                        <p class="text-gray-500 text-xs mb-2">Adventure • 2024</p>
+                        <div class="flex items-center mb-3">
+                            <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
+                            <span class="text-gray-500 text-sm ml-2">(203 reviews)</span>
+                        </div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-2xl font-bold text-primary">₦6,119</span>
+                            <button onclick="previewBook('mountain-adventures')" class="text-primary hover:underline text-sm">Preview</button>
+                        </div>
+                        <button onclick="addToCart('mountain-adventures')" class="w-full bg-primary hover:bg-primary-dark text-white py-2 rounded-lg font-medium transition-colors">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Author CTA -->
+            <div class="bg-gradient-to-r from-primary to-primary-light rounded-xl p-8 text-white text-center">
+                <h3 class="text-3xl font-bold mb-4">Ready to Publish Your Book?</h3>
+                <p class="text-xl mb-6 opacity-90">Join thousands of authors earning from their passion. Easy upload, secure payments via Flutterwave.</p>
+                <button onclick="showAuthorDashboard()" class="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">Start Selling Today</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section id="community" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Join Our Community</h2>
+                <p class="text-xl text-gray-600">Connect with fellow book lovers, share reviews, and discover your next great read</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8 mb-12">
+                <!-- Community Feed -->
+                <div class="bg-white rounded-xl shadow-sm p-6">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Community Feed</h3>
+                    <!-- Post Input -->
+                    <div class="border border-gray-200 rounded-lg p-4 mb-6">
+                        <textarea placeholder="What are you reading now? Share your thoughts..." class="w-full h-20 resize-none border-none focus:ring-0 focus:outline-none"></textarea>
+                        <div class="flex justify-between items-center mt-3">
+                            <div class="flex gap-2">
+                                <button class="text-gray-500 hover:text-primary">📚</button>
+                                <button class="text-gray-500 hover:text-primary">⭐</button>
+                                <button class="text-gray-500 hover:text-primary">📸</button>
+                              </div>
+                            <button onclick="sharePost()" class="bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">Share</button>
+                        </div>
+                    </div>
+
+                    <!-- Sample Posts -->
+                    <div class="space-y-4">
+                        <div class="border-b border-gray-100 pb-4">
+                            <div class="flex items-center mb-3">
+                                <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-bold">A</div>
+                              <div class="ml-3">
+                                    <p class="font-semibold text-gray-900">Alice Johnson</p>
+                                    <p class="text-gray-500 text-sm">2 hours ago</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 mb-3">Just finished "The Seven Husbands of Evelyn Hugo" and I'm absolutely speechless! 📚✨ The storytelling is incredible. Anyone else read this masterpiece?</p>
+                            <div class="flex items-center gap-4 text-sm text-gray-500">
+                                <button class="hover:text-primary">❤️ 24</button>
+                                <button class="hover:text-primary">💬 8</button>
+                              <button class="hover:text-primary">🔄 3</button>
+                            </div>
+                        </div>
+
+                        <div class="border-b border-gray-100 pb-4">
+                            <div class="flex items-center mb-3">
+                                <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white font-bold">M</div>
+                              <div class="ml-3">
+                                    <p class="font-semibold text-gray-900">Mike Chen</p>
+                                    <p class="text-gray-500 text-sm">5 hours ago</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 mb-3">Currently reading "Atomic Habits" by James Clear. The insights on habit formation are mind-blowing! 🧠 Highly recommend for anyone looking to improve their daily routines.</p>
+                            <div class="flex items-center gap-4 text-sm text-gray-500">
+                                <button class="hover:text-primary">❤️ 18</button>
+                              <button class="hover:text-primary">💬 12</button>
+                                <button class="hover:text-primary">🔄 5</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Top Rated & Popular -->
+                <div class="space-y-6">
+                    <div class="bg-white rounded-xl shadow-sm p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Top Rated This Week</h3>
+                        <div class="space-y-3">
+                          <div class="flex items-center gap-3">
+                                <div class="w-12 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded flex items-center justify-center text-white text-xs">📖</div>
+                                <div class="flex-1">
+                                    <p class="font-semibold text-gray-900">The Midnight Library</p>
+                                    <p class="text-gray-600 text-sm">Matt Haig</p>
+                                    <div class="flex items-center">
+                                        <span class="text-yellow-400 text-sm">⭐⭐⭐⭐⭐</span>
+                                        <span class="text-gray-500 text-sm ml-1">4.8</span>
+                                    </div>
+                                  </div>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded flex items-center justify-center text-white text-xs">🌟</div>
+                                <div class="flex-1">
+                                    <p class="font-semibold text-gray-900">Educated</p>
+                                    <p class="text-gray-600 text-sm">Tara Westover</p>
+                                  <div class="flex items-center">
+                                        <span class="text-yellow-400 text-sm">⭐⭐⭐⭐⭐</span>
+                                        <span class="text-gray-500 text-sm ml-1">4.7</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                 <div class="bg-white rounded-xl shadow-sm p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Most Popular</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-16 bg-gradient-to-br from-purple-400 to-purple-600 rounded flex items-center justify-center text-white text-xs">🔥</div>
+                                <div class="flex-1">
+                                    <p class="font-semibold text-gray-900">Fourth Wing</p>
+                                    <p class="text-gray-600 text-sm">Rebecca Yarros</p>
+                                  <p class="text-gray-500 text-sm">2.3k readers</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-16 bg-gradient-to-br from-red-400 to-red-600 rounded flex items-center justify-center text-white text-xs">📚</div>
+                                <div class="flex-1">
+                                    <p class="font-semibold text-gray-900">Tomorrow, and Tomorrow</p>
+                                    <p class="text-gray-600 text-sm">Gabrielle Zevin</p>
+                                    <p class="text-gray-500 text-sm">1.8k readers</p>
+                                  </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-primary rounded-xl p-6 text-white text-center">
+                        <h3 class="text-xl font-bold mb-3">Join the Discussion</h3>
+                        <p class="mb-4 opacity-90">Connect with 50,000+ book lovers worldwide</p>
+                        <button onclick="showSignup()" class="bg-white text-primary px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors">Sign Up Free</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+  <!-- Blog Section -->
+    <section id="blog" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Latest from Our Blog</h2>
+                <p class="text-xl text-gray-600">Book news, author interviews, and reading tips</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <article class="bg-gray-50 rounded-xl overflow-hidden hover:shadow-lg transition-shadow cursor-pointer" onclick="readBlogPost('sarah-chen-interview')">
+                  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='200' viewBox='0 0 400 200'%3E%3Crect width='400' height='200' fill='%23667eea'/%3E%3Ctext x='200' y='100' font-family='Arial' font-size='60' fill='white' text-anchor='middle' dy='20'%3E✍️%3C/text%3E%3C/svg%3E" alt="Author Interview" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="text-primary text-sm font-medium mb-2">Author Interview</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">5 Minutes with Bestselling Author Sarah Chen</h3>
+                        <p class="text-gray-600 mb-4">Discover the inspiration behind "The Future of AI" and her writing process...</p>
+                      <button onclick="event.stopPropagation(); readBlogPost('sarah-chen-interview')" class="text-primary font-semibold hover:underline">Read More →</button>
+                    </div>
+                </article>
+
+                <article class="bg-gray-50 rounded-xl overflow-hidden hover:shadow-lg transition-shadow cursor-pointer" onclick="readBlogPost('reading-habits')">
+                  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='200' viewBox='0 0 400 200'%3E%3Crect width='400' height='200' fill='%2348bb78'/%3E%3Ctext x='200' y='100' font-family='Arial' font-size='60' fill='white' text-anchor='middle' dy='20'%3E📚%3C/text%3E%3C/svg%3E" alt="Reading Tips" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="text-primary text-sm font-medium mb-2">Reading Tips</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">10 Ways to Build a Consistent Reading Habit</h3>
+                        <p class="text-gray-600 mb-4">Transform your reading goals into daily habits with these proven strategies...</p>
+                      <button onclick="event.stopPropagation(); readBlogPost('reading-habits')" class="text-primary font-semibold hover:underline">Read More →</button>
+                    </div>
+                </article>
+
+                <article class="bg-gray-50 rounded-xl overflow-hidden hover:shadow-lg transition-shadow cursor-pointer" onclick="readBlogPost('literary-awards')">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='200' viewBox='0 0 400 200'%3E%3Crect width='400' height='200' fill='%239f7aea'/%3E%3Ctext x='200' y='100' font-family='Arial' font-size='60' fill='white' text-anchor='middle' dy='20'%3E🏆%3C/text%3E%3C/svg%3E" alt="Literary Awards" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="text-primary text-sm font-medium mb-2">Book News</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">2024 Literary Awards: The Complete Winners List</h3>
+                        <p class="text-gray-600 mb-4">Celebrating this year's most outstanding literary achievements across all genres...</p>
+                      <button onclick="event.stopPropagation(); readBlogPost('literary-awards')" class="text-primary font-semibold hover:underline">Read More →</button>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- 
-            ADD YOUR ABOUT SECTION CONTENT HERE
-             <!-- About Section -->
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4">About FMKS</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">A unique educational institution that seamlessly blends Islamic teachings with comprehensive Western education, preparing young minds for success in both worlds.</p>
-            </div>
+    <section id="about" class="py-16 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold text-gray-900 mb-6">Our Vision</h2>
+            <p class="text-xl text-gray-600 mb-8">My Library exists to connect book lovers worldwide and empower authors to share their stories. We believe that books have the power to transform lives, spark conversations, and build communities.</p>
             
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="text-center card-hover bg-gradient-to-br from-fmks-blue to-fmks-blue text-white p-8 rounded-2xl">
-                    <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Islamic Values</h3>
-                    <p class="opacity-90">Comprehensive Islamic education including Quran, Hadith, and Islamic studies integrated into daily learning.</p>
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div class="text-center">
+                    <div class="text-4xl mb-4">🌍</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Global Community</h3>
+                    <p class="text-gray-600">Connecting readers and authors from every corner of the world</p>
+                  </div>
+                <div class="text-center">
+                    <div class="text-4xl mb-4">📖</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Free Access</h3>
+                    <p class="text-gray-600">Making literature accessible to everyone through our free library</p>
                 </div>
-                
-                <div class="text-center card-hover bg-gradient-to-br from-fmks-pink to-fmks-pink text-white p-8 rounded-2xl">
-                    <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Quality Education</h3>
-                    <p class="opacity-90">Modern Western curriculum covering Mathematics, English, Science, and Arts with innovative teaching methods.</p>
-                </div>
-                
-                <div class="text-center card-hover bg-gradient-to-br from-purple-600 to-indigo-600 text-white p-8 rounded-2xl">
-                    <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M20 3H4c-1.11 0-2 .89-2 2v11c0 1.11.89 2 2 2h3l1 1h8l1-1h3c1.11 0 2-.89 2-2V5c0-1.11-.89-2-2-2zm0 13H4V5h16v11z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">IT Training</h3>
-                    <p class="opacity-90">Modern computer skills and digital literacy training to prepare students for the digital age.</p>
+                <div class="text-center">
+                    <div class="text-4xl mb-4">✨</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Author Empowerment</h3>
+                    <p class="text-gray-600">Providing tools and platform for authors to reach their audience</p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Programs Section -->
-    <section id="programs" class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4">Our Programs</h2>
-                <p class="text-xl text-gray-600">Comprehensive education from Nursery to JSS 3</p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white rounded-2xl p-6 card-hover shadow-lg">
-                    <div class="text-6xl mb-4">🌱</div>
-                    <h3 class="text-xl font-bold text-fmks-blue mb-3">Nursery & Kindergarten</h3>
-                    <p class="text-gray-600 mb-4">Foundation learning with play-based Islamic and academic activities for ages 3-5.</p>
-                    <ul class="text-sm text-gray-500 space-y-1">
-                        <li>• Basic Arabic letters</li>
-                        <li>• Simple Duas & prayers</li>
-                        <li>• Number & letter recognition</li>
-                        <li>• Creative play & arts</li>
-                    </ul>
-                </div>
-                
-                <div class="bg-white rounded-2xl p-6 card-hover shadow-lg">
-                    <div class="text-6xl mb-4">📚</div>
-                    <h3 class="text-xl font-bold text-fmks-pink mb-3">Primary (1-5)</h3>
-                    <p class="text-gray-600 mb-4">Comprehensive primary education with Islamic studies and core subjects.</p>
-                    <ul class="text-sm text-gray-500 space-y-1">
-                        <li>• Quran reading & memorization</li>
-                        <li>• English & Mathematics</li>
-                        <li>• Science & Social Studies</li>
-                        <li>• Basic computer skills</li>
-                    </ul>
-                </div>
-                
-                <div class="bg-white rounded-2xl p-6 card-hover shadow-lg">
-                    <div class="text-6xl mb-4">🎓</div>
-                    <h3 class="text-xl font-bold text-fmks-blue mb-3">Junior Secondary (JSS 1-3)</h3>
-                    <p class="text-gray-600 mb-4">Advanced secondary education preparing students for senior secondary school.</p>
-                    <ul class="text-sm text-gray-500 space-y-1">
-                        <li>• Advanced Islamic studies</li>
-                        <li>• Core subjects</li>
-                        <li>• IT & Computer literacy</li>
-                        <li>• Leadership development</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Vision & Mission Section -->
-    <section id="vision-mission" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-800 mb-4">Vision & Mission</h2>
-                <p class="text-xl text-gray-600">Our guiding principles for Islamic educational excellence</p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 gap-12">
-                <div class="bg-gradient-to-br from-fmks-blue to-blue-600 rounded-xl p-8 text-white">
-                    <div class="flex items-center mb-6">
-                        <div class="w-12 h-12 bg-white bg-opacity-20 rounded-lg flex items-center justify-center mr-4">
-                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/>
-                                <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/>
-                            </svg>
-                        </div>
-                        <h3 class="text-2xl font-bold">Our Vision</h3>
-                    </div>
-                    <p class="text-blue-100 leading-relaxed">
-                        To be the leading Islamic educational academy that produces confident, knowledgeable, and righteous Muslim leaders who contribute positively to society while maintaining strong Islamic values and identity in the modern world.
-                    </p>
-                </div>
-                
-                <div class="bg-gradient-to-br from-fmks-pink to-pink-600 rounded-xl p-8 text-white">
-                    <div class="flex items-center mb-6">
-                        <div class="w-12 h-12 bg-white bg-opacity-20 rounded-lg flex items-center justify-center mr-4">
-                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clip-rule="evenodd"/>
-                                <path d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z"/>
-                            </svg>
-                        </div>
-                        <h3 class="text-2xl font-bold">Our Mission</h3>
-                    </div>
-                    <p class="text-pink-100 leading-relaxed">
-                        To provide holistic Islamic education that integrates Quranic teachings, modern academics, and character development, preparing students to excel in this world while securing success in the hereafter through comprehensive learning experiences.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-800 mb-4">School Gallery</h2>
-                <p class="text-xl text-gray-600">Glimpses of our vibrant Islamic learning environment</p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
-                    <img src="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
-                         alt="Students in prayer at Islamic school" 
-                         class="h-48 w-full object-cover"
-                         onerror="this.src=''; this.alt='Prayer image failed to load'; this.style.display='none';">
-                    <div class="p-4">
-                        <h3 class="font-semibold text-gray-800">Daily Prayers</h3>
-                        <p class="text-gray-600 text-sm">Congregational prayers fostering unity</p>
-                    </div>
-                </div>
-                
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
-                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
-                         alt="Interactive learning in modern classroom" 
-                         class="h-48 w-full object-cover"
-                         onerror="this.src=''; this.alt='Classroom image failed to load'; this.style.display='none';">
-                    <div class="p-4">
-                        <h3 class="font-semibold text-gray-800">Modern Classrooms</h3>
-                        <p class="text-gray-600 text-sm">Conducive learning environment</p>
-                    </div>
-                </div>
-                
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRfISPXbGguuNusF72LBPRsdu_J9R15YyzDVhbuxjKXj7bobhNrTHOu7k&s=10" 
-                         alt="Students participating in sports activities" 
-                         class="h-48 w-full object-cover"
-                         onerror="this.src=''; this.alt='Sports image failed to load'; this.style.display='none';">
-                    <div class="p-4">
-                        <h3 class="font-semibold text-gray-800">Recreational Activities</h3>
-                        <p class="text-gray-600 text-sm">Balanced development through programs</p>
-                    </div>
-                </div>
-                
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
-                    <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
-                         alt="Students reading and studying together" 
-                         class="h-48 w-full object-cover"
-                         onerror="this.src=''; this.alt='Study image failed to load'; this.style.display='none';">
-                    <div class="p-4">
-                        <h3 class="font-semibold text-gray-800">Learning & Study</h3>
-                        <p class="text-gray-600 text-sm">Quiet spaces for learning and studying</p>
-                    </div>
-                </div>
-                
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7fZxZl1BxcJK1MClL8h1vlV5CuiSIexs2GyarRpBclrpRvRIdRquNQX8&s=10" 
-                         alt="School building exterior view" 
-                         class="h-48 w-full object-cover"
-                         onerror="this.src=''; this.alt='Building image failed to load'; this.style.display='none';">
-                    <div class="p-4">
-                        <h3 class="font-semibold text-gray-800">School Compound</h3>
-                        <p class="text-gray-600 text-sm">Beautiful and safe learning environment</p>
-                    </div>
-                </div>
-                
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJquTW_Rmy0MkuQI_GJVvLcXjO6X5GAHQ-9nqIKKXnDr4u0m-HzKljcbI&s=10" 
-                         alt="Students participating in science experiments" 
-                         class="h-48 w-full object-cover"
-                         onerror="this.src=''; this.alt='Science image failed to load'; this.style.display='none';">
-                    <div class="p-4">
-                        <h3 class="font-semibold text-gray-800">Computer Lab</h3>
-                        <p class="text-gray-600 text-sm">Hands-on learning experiences</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Features Section -->
-    <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 gap-16 items-center">
-                <div>
-                    <h2 class="text-4xl font-bold text-gray-900 mb-6">Why Choose FMKS ?</h2>
-                    <div class="space-y-6">
-                        <div class="flex items-start space-x-4">
-                            <div class="w-8 h-8 bg-fmks-blue rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <h3 class="text-lg font-semibold text-gray-900">Qualified Islamic Scholars</h3>
-                                <p class="text-gray-600">Experienced teachers with deep Islamic knowledge and modern teaching credentials.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start space-x-4">
-                            <div class="w-8 h-8 bg-fmks-pink rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <h3 class="text-lg font-semibold text-gray-900">Small Class Sizes</h3>
-                                <p class="text-gray-600">Personalized attention with maximum 15 students per class for optimal learning.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start space-x-4">
-                            <div class="w-8 h-8 bg-fmks-blue rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <h3 class="text-lg font-semibold text-gray-900">Modern Facilities</h3>
-                                <p class="text-gray-600">Conducive classrooms, Computer room, prayer hall, and playground facilities.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-800 mb-4">Get In Touch</h2>
-                <p class="text-xl text-gray-600">Ready to give your child the best of both worlds? Contact us today!</p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 gap-12">
-                <div>
-                    <h3 class="text-2xl font-bold text-fmks-blue mb-6">Contact Information</h3>
-                    <div class="space-y-6">
-                        <div class="flex items-start">
-                            <div class="w-6 h-6 bg-fmks-pink rounded-full flex items-center justify-center mr-4 mt-1">
-                                <span class="text-white text-xs">📍</span>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-800">Address</h4>
-                                <p class="text-gray-600">Ibukun Oluwa Area, Behind NECO Office,<br>Gbongan/Ibadan Road,<br>Osun State, Nigeria</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="w-6 h-6 bg-fmks-pink rounded-full flex items-center justify-center mr-4 mt-1">
-                                <span class="text-white text-xs">📞</span>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-800">Phone</h4>
-                                <p class="text-gray-600">070 357 119 83</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="w-6 h-6 bg-fmks-pink rounded-full flex items-center justify-center mr-4 mt-1">
-                                <span class="text-white text-xs">✉️</span>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-800">Email</h4>
-                                <p class="text-gray-600">futuremodel2005@yahoo.com</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="w-6 h-6 bg-fmks-pink rounded-full flex items-center justify-center mr-4 mt-1">
-                                <span class="text-white text-xs">🕐</span>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-800">School Hours</h4>
-                                <p class="text-gray-600">Monday - Thursday: 8:00 AM - 4:00 PM<br>Friday: 8:00 AM - 1:00 PM</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="bg-white rounded-xl p-8 shadow-lg">
-                    <h3 class="text-xl font-bold text-gray-800 mb-6">Send Us a Message</h3>
-                    <form class="space-y-4" action="mailto:info@fmks.edu" method="post" enctype="text/plain" onsubmit="handleEmailSubmit(event)">
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Parent/Guardian Name</label>
-                            <input type="text" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-fmks-blue focus:border-transparent" placeholder="Your full name">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
-                            <input type="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-fmks-blue focus:border-transparent" placeholder="your.email@example.com">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
-                            <input type="tel" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-fmks-blue focus:border-transparent" placeholder="+234 804 671 2349">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Message</label>
-                            <textarea name="message" rows="4" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-fmks-blue focus:border-transparent" placeholder="Tell us about your interest in FMKS..."></textarea>
-                        </div>
-                        <button type="submit" class="w-full bg-gradient-to-r from-fmks-blue to-fmks-pink text-white py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity">
-                            📧 Send Email to School
-                        </button>
-                    </form>
-                    
-                    <!-- WhatsApp Button -->
-                    <div class="mt-6 pt-6 border-t border-gray-200">
-                        <p class="text-center text-gray-600 mb-4">Or chat with us directly</p>
-                        <button onclick="openWhatsApp()" class="w-full bg-green-500 hover:bg-green-600 text-white py-3 rounded-lg font-semibold transition-colors flex items-center justify-center space-x-2">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-
-                                    2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-
-                                    3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
-                                </svg>
-                            <span>💬 Chat on WhatsApp</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
+          <button onclick="showContact()" class="bg-primary hover:bg-primary-dark text-white px-8 py-3 rounded-lg font-semibold transition-colors">Get in Touch</button>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-12">
+    <footer class="bg-gray-900 text-white py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-4 gap-8">
                 <div>
-                    <div class="flex items-center mb-4">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHkJm7Gaoyj99wW_Vgm4LXXe5B0t6Tfddubw&s" 
-                             alt="Future Model Of Knowledge School Logo" 
-                             class="w-10 h-10 rounded-lg mr-3 object-cover"
-                             onerror="this.src=''; this.alt='School logo failed to load'; this.style.display='none';">
-                        <span class="text-xl font-bold">FMKS</span>
-                    </div>
-                    <p class="text-gray-400 text-sm">
-                        Future Model Of Knowledge School - Knowledge Is Light & Power
-                    </p>
-                </div>
-                <div>
-                    <h4 class="font-semibold mb-4">Quick Links</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="#about" class="hover:text-white transition-colors">About Us</a></li>
-                        <li><a href="#programs" class="hover:text-white transition-colors">Programs</a></li>
-                        <li><a href="#vision-mission" class="hover:text-white transition-colors">Vision & Mission</a></li>
-                        <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-semibold mb-4">Programs</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li>Early Years Education</li>
-                        <li>Primary School</li>
-                        <li>Secondary School</li>
-                        <li>Quran Memorization</li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-semibold mb-4">Connect With Us</h4>
-                    <p class="text-gray-400 text-sm mb-4">
-                        Follow our journey in Islamic education
-                    </p>
+                    <h3 class="text-2xl font-bold mb-4">📚 My Library</h3>
+                    <p class="text-gray-400 mb-4">Connecting book lovers worldwide through reading, sharing, and discovery.</p>
                     <div class="flex space-x-4">
-                        <a href="https://www.facebook.com/fmkschools" target="_blank" class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
-                            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                            </svg>
-                        </a>
-                        <a href="https://vm.tiktok.com/ZSHtrNKCF7ohm-Frzv9/" target="_blank" class="w-10 h-10 bg-black rounded-full flex items-center justify-center hover:bg-gray-800 transition-colors">
-                            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-.88-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/>
-                            </svg>
-                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">📘</a>
+                        <a href="#" class="text-gray-400 hover:text-white">🐦</a>
+                        <a href="#" class="text-gray-400 hover:text-white">📷</a>
+                        <a href="#" class="text-gray-400 hover:text-white">💼</a>
                     </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Explore</h4>
+                    <ul class="space-y-2 text-gray-400">
+                      <li><a href="#library" class="hover:text-white">Free Library</a></li>
+                        <li><a href="#marketplace" class="hover:text-white">Marketplace</a></li>
+                        <li><a href="#community" class="hover:text-white">Community</a></li>
+                        <li><a href="#blog" class="hover:text-white">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">For Authors</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Publish Your Book</a></li>
+                      <li><a href="#" class="hover:text-white">Author Dashboard</a></li>
+                        <li><a href="#" class="hover:text-white">Sales Analytics</a></li>
+                        <li><a href="#" class="hover:text-white">Marketing Tools</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Help Center</a></li>
+                        <li><a href="#" class="hover:text-white">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white">Terms of Service</a></li>
+                    </ul>
                 </div>
             </div>
-            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
-                <p class="text-gray-400 text-sm">
-                    © 2025 Future Model Of Knowledge School. All rights reserved. | Knowledge Is Light & Power
-                </p>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 My Library. All rights reserved. Built with ❤️ for book lovers everywhere.</p>
             </div>
         </div>
     </footer>
+  <!-- Modals -->
+    <div id="loginModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-white rounded-xl p-8 max-w-md w-full mx-4">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Welcome Back</h2>
+            <form onsubmit="handleLogin(event)">
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-medium mb-2">Email</label>
+                    <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                </div>
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-medium mb-2">Password</label>
+                  <input type="password" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                </div>
+                <button type="submit" class="w-full bg-primary hover:bg-primary-dark text-white py-3 rounded-lg font-semibold transition-colors">Sign In</button>
+            </form>
+            <p class="text-center text-gray-600 mt-4">Don't have an account? <button onclick="showSignup()" class="text-primary hover:underline">Sign up</button></p>
+            <button onclick="hideModal('loginModal')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">✕</button>
+        </div>
+    </div>
+<div id="signupModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-white rounded-xl p-8 max-w-md w-full mx-4">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Join My Library</h2>
+            <form onsubmit="handleSignup(event)">
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-medium mb-2">Full Name</label>
+                    <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-medium mb-2">Email</label>
+                    <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                </div>
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-medium mb-2">Password</label>
+                    <input type="password" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                </div>
+                <button type="submit" class="w-full bg-primary hover:bg-primary-dark text-white py-3 rounded-lg font-semibold transition-colors">Create Account</button>
+              </form>
+            <p class="text-center text-gray-600 mt-4">Already have an account? <button onclick="showLogin()" class="text-primary hover:underline">Sign in</button></p>
+            <button onclick="hideModal('signupModal')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">✕</button>
+        </div>
+    </div>
+
+    <div id="authorModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-white rounded-xl p-8 max-w-2xl w-full mx-4 max-h-[90vh] overflow-y-auto">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Author Dashboard</h2>
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h3 class="font-semibold text-gray-900 mb-2">Total Sales</h3>
+                    <p class="text-3xl font-bold text-primary">$2,847</p>
+                    <p class="text-sm text-gray-600">+12% from last month</p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h3 class="font-semibold text-gray-900 mb-2">Books Sold</h3>
+                    <p class="text-3xl font-bold text-primary">143</p>
+                    <p class="text-sm text-gray-600">Across 3 titles</p>
+                </div>
+            </div>
+          <div class="mb-6">
+                <h3 class="text-lg font-semibold text-gray-900 mb-4">Upload New Book</h3>
+                <form onsubmit="handleBookUpload(event)">
+                    <div class="grid md:grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label class="block text-gray-700 text-sm font-medium mb-2">Book Title</label>
+                            <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                        </div>
+                        <div>
+                          <label class="block text-gray-700 text-sm font-medium mb-2">Price ($)</label>
+                            <input type="number" step="0.01" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-medium mb-2">Description</label>
+                      <textarea class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent h-24" required></textarea>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-medium mb-2">Book File (PDF/EPUB)</label>
+                        <input type="file" accept=".pdf,.epub" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                    </div>
+                    <button type="submit" class="bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-lg font-semibold transition-colors">Upload Book</button>
+                </form>
+            </div>
+          <div class="text-center text-sm text-gray-600 bg-yellow-50 p-4 rounded-lg">
+                <p><strong>Demo Notice:</strong> This is a sample author dashboard. In the full version, payments would be processed securely through Flutterwave integration.</p>
+            </div>
+
+            <button onclick="hideModal('authorModal')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">✕</button>
+        </div>
+    </div>
+  <div id="contactModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-white rounded-xl p-8 max-w-md w-full mx-4">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Get in Touch</h2>
+            <form onsubmit="handleContact(event)">
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-medium mb-2">Name</label>
+                    <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-medium mb-2">Email</label>
+                    <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                </div>
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-medium mb-2">Message</label>
+                    <textarea class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent h-24" required></textarea>
+                </div>
+                <button type="submit" class="w-full bg-primary hover:bg-primary-dark text-white py-3 rounded-lg font-semibold transition-colors">Send Message</button>
+              </form>
+            <button onclick="hideModal('contactModal')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">✕</button>
+        </div>
+    </div>
 
     <script>
-        function toggleMenu() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
+        // Modal functions
+        function showLogin() {
+            hideModal('signupModal');
+            document.getElementById('loginModal').classList.remove('hidden');
+            document.getElementById('loginModal').classList.add('flex');
         }
-    function scrollToSection(sectionId) {
-            document.getElementById(sectionId).scrollIntoView({
+
+        function showSignup() {
+            hideModal('loginModal');
+            document.getElementById('signupModal').classList.remove('hidden');
+            document.getElementById('signupModal').classList.add('flex');
+        }
+
+        function showAuthorDashboard() {
+            document.getElementById('authorModal').classList.remove('hidden');
+            document.getElementById('authorModal').classList.add('flex');
+        }
+
+        function showContact() {
+            document.getElementById('contactModal').classList.remove('hidden');
+            document.getElementById('contactModal').classList.add('flex');
+        }
+  function hideModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+            document.getElementById(modalId).classList.remove('flex');
+        }
+
+        // Form handlers
+        function handleLogin(event) {
+            event.preventDefault();
+            alert('Welcome back! Login functionality would connect to your authentication system.');
+            hideModal('loginModal');
+        }
+
+        function handleSignup(event) {
+            event.preventDefault();
+            alert('Welcome to My Library! Account creation would be processed through your backend.');
+            hideModal('signupModal');
+        }
+  function handleBookUpload(event) {
+            event.preventDefault();
+            alert('Book uploaded successfully! In the full version, this would process the file and integrate with Flutterwave for payments.');
+            hideModal('authorModal');
+        }
+
+        function handleContact(event) {
+            event.preventDefault();
+            alert('Thank you for your message! We\'ll get back to you soon.');
+            hideModal('contactModal');
+        }
+
+        // Smooth scrolling
+        function scrollToSection(sectionId) {
+          document.getElementById(sectionId).scrollIntoView({
                 behavior: 'smooth'
             });
         }
 
-        function handleEmailSubmit(event) {
-            event.preventDefault();
-            const form = event.target;
-            const formData = new FormData(form);
-            const name = formData.get('name');
-            const email = formData.get('email');
-            const phone = formData.get('phone');
-            const message = formData.get('message');
-            
-            const subject = `Enrollment Inquiry from ${name}`;
-            const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0APhone: ${phone}%0D%0A%0D%0AMessage:%0D%0A${message}`;
-            const mailtoLink = `mailto:futuremodel2005@yahoo.com?subject=${encodeURIComponent(subject)}&body=${body}`;
-            window.location.href = mailtoLink;
+        // Close modals when clicking outside
+        window.onclick = function(event) {
+            const modals = ['loginModal', 'signupModal', 'authorModal', 'contactModal'];
+            modals.forEach(modalId => {
+                const modal = document.getElementById(modalId);
+                if (event.target === modal) {
+                    hideModal(modalId);
+                }
+            });
+        }
+  // Book functions
+        function openBookDetails(bookId) {
+            const books = {
+                'pride-prejudice': {
+                    title: 'Pride and Prejudice',
+                    author: 'Jane Austen',
+                    description: 'A classic romance novel about Elizabeth Bennet and Mr. Darcy...',
+                    year: '1813'
+                },
+                'origin-species': {
+                    title: 'The Origin of Species',
+                    author: 'Charles Darwin',
+                    description: 'Darwin\'s groundbreaking work on evolution and natural selection...',
+                    year: '1859'
+                },
+              'hamlet': {
+                    title: 'Hamlet',
+                    author: 'William Shakespeare',
+                    description: 'The tragic story of the Prince of Denmark...',
+                    year: '1603'
+                },
+                'republic': {
+                    title: 'The Republic',
+                    author: 'Plato',
+                    description: 'Plato\'s philosophical dialogue on justice and the ideal state...',
+                    year: '380 BC'
+                }
+            };
+          const book = books[bookId];
+            if (book) {
+                alert(`📖 ${book.title}\n\nBy: ${book.author}\nYear: ${book.year}\n\n${book.description}\n\nClick Download PDF or Read Online to access this book!`);
+            }
         }
 
-        function openWhatsApp() {
-            const phoneNumber = "+2347035719683"; // Replace with actual school WhatsApp number
-            const message = "Hello! I'm interested in learning more about Future Model Of Knowledge School. Could you please provide me with information about enrollment?";
-            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-            window.open(whatsappUrl, '_blank');
+        function downloadBook(bookId) {
+            // Create a sample PDF content
+            const pdfContent = `%PDF-1.4
+1 0 obj
+<<
+/Type /Catalog
+/Pages 2 0 R
+>>
+endobj
+  2 0 obj
+<<
+/Type /Pages
+/Kids [3 0 R]
+/Count 1
+>>
+endobj
+
+3 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Contents 4 0 R
+>>
+endobj
+
+4 0 obj
+<<
+/Length 44
+>>
+  stream
+BT
+/F1 12 Tf
+72 720 Td
+(Sample Book Content) Tj
+ET
+endstream
+endobj
+
+xref
+0 5
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000206 00000 n 
+trailer
+<<
+/Size 5
+/Root 1 0 R
+>>
+startxref
+299
+%%EOF`;
+const blob = new Blob([pdfContent], { type: 'application/pdf' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `${bookId}.pdf`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            
+            alert('📥 Download started! Your free book is being downloaded.');
         }
-    // Smooth scrolling for navigation links
+  function readOnline(bookId) {
+            const readerWindow = window.open('', '_blank', 'width=800,height=600');
+            readerWindow.document.write(`
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <title>My Library - Online Reader</title>
+                    <style>
+                        body { font-family: Arial, sans-serif; padding: 40px; line-height: 1.6; }
+                        .header { text-align: center; margin-bottom: 30px; }
+                        .content { max-width: 600px; margin: 0 auto; }
+                    </style>
+                </head>
+                <body>
+    <div class="header">
+                        <h1>📚 My Library Online Reader</h1>
+                        <p>Reading: ${bookId.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase())}</p>
+                    </div>
+                    <div class="content">
+                        <h2>Chapter 1</h2>
+                        <p>This is a sample chapter from the selected book. In a full implementation, this would display the actual book content with navigation controls, bookmarks, and reading preferences.</p>
+                        <p>The online reader would include features like:</p>
+                        <ul>
+                          <li>Page navigation</li>
+                            <li>Font size adjustment</li>
+                            <li>Bookmarking</li>
+                            <li>Search within book</li>
+                            <li>Reading progress tracking</li>
+                        </ul>
+                        <p><em>This is a demo version. The full reader would load the complete book content.</em></p>
+                    </div>
+                </body>
+                </html>
+            `);
+        }
+function searchBooks() {
+            const searchTerm = document.querySelector('input[placeholder*="Search books"]').value;
+            if (searchTerm.trim()) {
+                alert(`🔍 Searching for: "${searchTerm}"\n\nIn a full implementation, this would filter books by title, author, or keywords and display matching results.`);
+            } else {
+                alert('Please enter a search term to find books.');
+            }
+        }
+
+        function viewAllBooks() {
+            alert('📚 Loading complete book library...\n\nThis would display all available books with pagination, advanced filters, and sorting options.');
+        }
+  // Marketplace functions
+        function previewBook(bookId) {
+            const books = {
+                'future-ai': 'Get a glimpse into the revolutionary world of artificial intelligence...',
+                'love-digital': 'A heartwarming romance set in our connected digital world...',
+                'mountain-adventures': 'Join thrilling expeditions through breathtaking mountain landscapes...'
+            };
+            
+            const preview = books[bookId] || 'Preview not available';
+            alert(`👀 Book Preview\n\n${preview}\n\nThis preview shows the first few pages. Purchase to read the complete book!`);
+        }
+  function addToCart(bookId) {
+            const books = {
+                'future-ai': { title: 'The Future of AI', price: '₦8,999' },
+                'love-digital': { title: 'Love in the Digital Age', price: '₦7,199' },
+                'mountain-adventures': { title: 'Mountain Adventures', price: '₦6,119' }
+            };
+            
+            const book = books[bookId];
+            if (book) {
+                alert(`🛒 Added to Cart!\n\n${book.title}\nPrice: ${book.price}\n\nProceed to checkout to complete your purchase with Flutterwave payment integration.`);
+            }
+        }
+  // Community functions
+        function sharePost() {
+            const postText = document.querySelector('textarea[placeholder*="What are you reading"]').value;
+            if (postText.trim()) {
+                alert(`📝 Post Shared!\n\n"${postText}"\n\nYour post has been shared with the community. Other readers can now see and interact with your thoughts!`);
+                document.querySelector('textarea[placeholder*="What are you reading"]').value = '';
+            } else {
+                alert('Please write something to share with the community!');
+            }
+        }
+  // Blog functions
+        function readBlogPost(postId) {
+            const posts = {
+                'sarah-chen-interview': {
+                    title: '5 Minutes with Bestselling Author Sarah Chen',
+                    content: 'In this exclusive interview, Sarah Chen discusses her writing process, inspiration for "The Future of AI", and advice for aspiring authors...'
+                },
+                'reading-habits': {
+                    title: '10 Ways to Build a Consistent Reading Habit',
+                    content: 'Transform your reading goals into daily habits with these proven strategies: 1. Set a daily reading time, 2. Start with just 15 minutes...'
+                  },
+                'literary-awards': {
+                    title: '2024 Literary Awards: The Complete Winners List',
+                    content: 'Celebrating this year\'s most outstanding literary achievements across all genres. Fiction Winner: "The Seven Moons of Maali Almeida"...'
+                }
+            };
+            
+            const post = posts[postId];
+            if (post) {
+                const blogWindow = window.open('', '_blank', 'width=800,height=600');
+                blogWindow.document.write(`
+                    <!DOCTYPE html>
+                    <html>
+                    <head>
+                      <title>${post.title} - My Library Blog</title>
+                        <style>
+                            body { font-family: Arial, sans-serif; padding: 40px; line-height: 1.6; }
+                            .header { text-align: center; margin-bottom: 30px; border-bottom: 2px solid #6B00FE; padding-bottom: 20px; }
+                            .content { max-width: 700px; margin: 0 auto; }
+                            h1 { color: #6B00FE; }
+                        </style>
+                    </head>
+                    <body>
+                        <div class="header">
+                            <h1>📚 My Library Blog</h1>
+                        </div>
+                        <div class="content">
+                          <h2>${post.title}</h2>
+                            <p>${post.content}</p>
+                            <p><em>This is a sample blog post. The full version would include complete articles, images, and interactive features.</em></p>
+                        </div>
+                    </body>
+                    </html>
+                `);
+            }
+        }
+
+        // Smooth scroll for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+          anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
                     target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
+                        behavior: 'smooth'
                     });
                 }
             });
         });
-    // Close mobile menu when clicking on a link
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                document.getElementById('mobile-menu').classList.add('hidden');
-            });
-        });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'977c70a5e577046e',t:'MTc1NjY0MjM4Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else 
+  <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9897de27f6f130f3',t:'MTc1OTYxNDM0Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else
     if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b)
-        {e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+      (b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
